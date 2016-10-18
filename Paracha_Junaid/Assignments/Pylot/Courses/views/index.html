@@ -1,0 +1,39 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+  </head>
+  <body>
+  <div>
+  	<h1>Add a new course</h1>
+  	<form action="/add" method="POST">
+  		<label>Name:<input type="text" name="name"></label>
+  		<br>
+  		<label>Discription:<input type="text" name="discription"></label>
+  		<br>
+  		<input type="submit" name="Add">
+  	</form>
+  	<form action="/show">
+  		<button>Show Existing Courses</button>
+  	</form>
+  	<table>
+  		<thead>Courses</thead>
+  		<tr>
+  			<td>Course Name</td>
+  			<td>Discription</td>
+  			<td>Date Added</td>
+  			<td>Action</td>
+  		</tr>
+  		{% for ele in course%}
+  		<tr>
+  			<td>{{ele['title']}}</td>
+  			<td>{{ele['description']}}</td>
+  			<td>{{ele['created_at']}}</td>
+  			<td>
+				<a href="/destroy/{{ele['id']}}">Remove</a>
+  			</td>
+  		</tr>
+  		{% endfor%}
+  	</table>
+  </div>
+  </body>
+</html>

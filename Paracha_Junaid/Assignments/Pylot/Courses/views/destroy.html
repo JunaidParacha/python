@@ -1,0 +1,26 @@
+<html>
+	<head>
+		<link rel="stylesheet" href="/static/css/styles.css" type="text/css">
+	</head>
+	<body>
+	<div>
+		<h1>Are you sure you want to delete the following Course?</h1>
+		<table>
+			<tr>
+				<td>Course Name</td>
+				<td>{{remove_course['title']}}</td>				
+			</tr>
+			<tr>
+				<td>Course Description</td>
+				<td>{{remove_course['description']}}</td>				
+			</tr>
+		</table>
+		<form action="/show">
+			<button>No</button>
+		</form>
+		<form action="/delete/{{remove_course['id']}}">
+			<button>Yes! I want to delete this</button>
+		</form>
+	</div>
+	</body>
+</html>

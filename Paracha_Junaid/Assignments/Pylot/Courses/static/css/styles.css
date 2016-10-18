@@ -1,0 +1,11 @@
+* {
+  font-family: monaco;
+}
+
+td {
+	border: 2px solid black;
+}
+table {
+    border-collapse: collapse;
+    margin-left: 20px; 
+}
